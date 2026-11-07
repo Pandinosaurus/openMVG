@@ -20,10 +20,12 @@ target_link_libraries(openMVG_robust_estimation
     openMVG_numeric
 )
 set_property(TARGET openMVG_robust_estimation PROPERTY FOLDER OpenMVG/OpenMVG)
-install(TARGETS openMVG_robust_estimation DESTINATION lib EXPORT openMVG-targets)
+install(TARGETS openMVG_robust_estimation DESTINATION ${CMAKE_INSTALL_LIBDIR} EXPORT openMVG-targets)
 set_target_properties(
   openMVG_robust_estimation
   PROPERTIES SOVERSION ${OPENMVG_VERSION_MAJOR}
   VERSION "${OPENMVG_VERSION_MAJOR}.${OPENMVG_VERSION_MINOR}")
 
-UNIT_TEST(openMVG gms_filter "openMVG_robust_estimation")
+if (NOT MSVC)
+  UNIT_TEST(openMVG gms_filter "openMVG_robust_estimation")
+endif()

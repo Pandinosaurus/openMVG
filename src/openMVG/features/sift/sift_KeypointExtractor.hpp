@@ -25,6 +25,11 @@ The implementation is based on
 #include "openMVG/features/sift/sift_keypoint.hpp"
 #include "openMVG/image/image_container.hpp"
 
+#ifdef _MSC_VER
+#pragma warning( once : 4267 ) //warning C4267: 'argument' : conversion from 'size_t' to 'const int', possible loss of data
+#pragma warning( once : 4244 ) //warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+#endif
+
 namespace openMVG{
 namespace features{
 namespace sift{
@@ -203,7 +208,7 @@ protected:
             key.y = delta * id_row;
             key.sigma = m_Dogs.sigmas[s];
             key.val = pix_val;
-            keypoints.emplace_back(key);
+            keypoints.push_back(std::move(key));
           }
         }
       }
@@ -392,7 +397,7 @@ protected:
             // Border check
             if (Border_Check(kp, w, h))
             {
-              kps.emplace_back(kp);
+              kps.push_back(std::move(kp));
             }
           }
         }

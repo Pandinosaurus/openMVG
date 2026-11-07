@@ -67,9 +67,6 @@ Bibliography
 .. [Schoeneberger2016] **Pixelwise View Selection for Unstructured Multi-View Stereo.**
     J. Schoeneberger, E. Zheng, M. Pollefeys, and. J. Frahm, ECCV 2016.
 
-.. [FLANN] **Fast Approximate Nearest Neighbors with Automatic Algorithm Configuration.**
-    Muja, Marius, and David G. Lowe.  VISAPP (1). 2009.
-
 .. [LinfNorm] **L infinity Minimization in Geometric Reconstruction Problems.**
     Richard I. Hartley, Frederik Schaffalitzky. CVPR 2004.
 
@@ -113,6 +110,9 @@ Bibliography
 
 .. [Lee_BMVC19] **Triangulation: Why Optimize?**
    S.H. Lee, J. Civera. BMVC 2019.
+
+.. [Ding] **Revisiting the P3P Problem.**
+   Y Ding, J Yang, V Larsson, C Olsson, K Åström. CVPR 2023.
 
 .. [Ceres] **Ceres Solver.**
     Sameer Agarwal and Keir Mierle and Others, http://ceres-solver.org

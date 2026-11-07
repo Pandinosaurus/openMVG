@@ -49,7 +49,7 @@ if (MSVC)
 endif (MSVC)
 set_target_properties(openMVG_sfm PROPERTIES SOVERSION ${OPENMVG_VERSION_MAJOR} VERSION "${OPENMVG_VERSION_MAJOR}.${OPENMVG_VERSION_MINOR}")
 set_property(TARGET openMVG_sfm PROPERTY FOLDER OpenMVG/OpenMVG)
-install(TARGETS openMVG_sfm DESTINATION lib EXPORT openMVG-targets)
+install(TARGETS openMVG_sfm DESTINATION ${CMAKE_INSTALL_LIBDIR} EXPORT openMVG-targets)
 
 UNIT_TEST(openMVG sfm_data_io "openMVG_sfm;${STLPLUS_LIBRARY}")
 UNIT_TEST(openMVG sfm_data_BA "openMVG_multiview_test_data;openMVG_sfm;${STLPLUS_LIBRARY}")
@@ -57,5 +57,7 @@ UNIT_TEST(openMVG sfm_data_utils "openMVG_sfm;${STLPLUS_LIBRARY}")
 UNIT_TEST(openMVG sfm_data_filters "openMVG_sfm")
 UNIT_TEST(openMVG sfm_data_graph_utils "openMVG_sfm")
 UNIT_TEST(openMVG sfm_data_triangulation "openMVG_sfm;openMVG_multiview_test_data;${STLPLUS_LIBRARY}")
+UNIT_TEST(openMVG sfm_report "openMVG_multiview_test_data;openMVG_sfm;${STLPLUS_LIBRARY}")
 
 add_subdirectory(pipelines)
+
